@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Xamarin_Try_2.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:Xamarin_Try_2"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Grid VerticalOptions="CenterAndExpand">
+            <Label
+                Grid.Column="0"
+                FontSize="100"
+                HorizontalTextAlignment="Center"
+                Text="{Binding LeftPoint}"
+                VerticalTextAlignment="Center" />
+            <Label
+                Grid.Column="1"
+                FontSize="100"
+                HorizontalTextAlignment="Center"
+                Text="{Binding RightPoint}"
+                VerticalTextAlignment="Center" />
+        </Grid>
+
+        <Grid VerticalOptions="End">
+            <Button
+                Grid.Row="1"
+                Grid.Column="0"
+                Command="{Binding LeftPlus}"
+                CornerRadius="5"
+                FontSize="Body"
+                Text="+1" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="0"
+                Command="{Binding LeftMinus}"
+                CornerRadius="5"
+                FontSize="Body"
+                Text="-1" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding RightPlus}"
+                CornerRadius="5"
+                FontSize="Body"
+                Text="+1" />
+            <Button
+                Grid.Row="2"
+                Grid.Column="1"
+                Command="{Binding RightMinus}"
+                CornerRadius="5"
+                FontSize="Body"
+                Text="-1" />
+            <Button
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Command="{Binding AllReset}"
+                CornerRadius="5"
+                FontSize="Body"
+                Text="リセット" />
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
